@@ -9,7 +9,6 @@ import { TitleComponent } from './components/title/title.component';
 import { DisplayComponent } from './components/display/display.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ChoiceComponent } from './components/choice/choice.component';
-import { DisplayContainerComponent } from './containers/display-container/display-container.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { DisplayContainerComponent } from './containers/display-container/displa
     DisplayComponent,
     ButtonComponent,
     ChoiceComponent,
-    DisplayContainerComponent,
   ],
   imports: [
     BrowserModule

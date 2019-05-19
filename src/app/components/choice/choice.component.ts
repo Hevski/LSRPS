@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./choice.component.scss']
 })
 export class ChoiceComponent implements OnInit {
+  @Input() classText: string;
 
   constructor() { }
 

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit {
-
+  title = 'Rock Paper Scissors Lizzard Spock!';
+  
   constructor() { }
 
   ngOnInit() {

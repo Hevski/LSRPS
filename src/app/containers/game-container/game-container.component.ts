@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
+import { ButtonComponent } from 'src/app/components/button/button.component';
 
 @NgModule({
   declarations: [
-    TitleComponent
+    TitleComponent,
+    ButtonComponent
   ]
 })
 

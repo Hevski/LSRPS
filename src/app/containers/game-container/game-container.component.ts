@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
+import { DisplayContainerComponent } from '../display-container/display-container.component';
 
 @NgModule({
   declarations: [
+    DisplayContainerComponent,
     TitleComponent,
     ButtonComponent
   ]

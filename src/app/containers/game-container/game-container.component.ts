@@ -8,11 +8,56 @@ import { TitleComponent } from '../../components/title/title.component';
 })
 export class GameContainerComponent implements OnInit {
 
+  hands: [
+    {
+      name: 'rock',
+      message: { 'lizard': 'Rock crushes Lizard', 'scissors': 'Rock crushes Scissors' }
+    },
+    {
+      name: 'paper',
+      message: { 'rock': 'Paper covers Rock ', 'spock': 'Paper disproves Spock' }
+    },
+    {
+      name: 'scissors',
+      message: { 'lizard': 'Scissors decapitates Lizard ', 'paper': 'Scissors cuts Paper' }
+    },
+    {
+      name: 'lizard',
+      message: { 'paper': 'Lizard eats Paper', 'spock': 'Lizard poisons Spock' }
+    },
+    {
+      name: 'spock',
+      message: { 'rock': 'Spock vaporizes Rock', 'scissors': 'Spock smashes Scissors' }
+    }
+  ];
+
+  playerChoice: [];
+  compupterChoice: null;
+  winner: null;
+  playerScore: 0;
+  computerScore: 0;
+  playing: false;
+
+
   title: TitleComponent;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  
+
+  // selectedChoice = 0
+  // computersChoice = 2
+  // winner = 0
+
+  // function determineWinner () => {
+      // if blah > blah
+      // set winner to 1
+  // }
+
+  // declairWinner
+  // 
+  //
 
 }

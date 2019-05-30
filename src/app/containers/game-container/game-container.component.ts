@@ -44,9 +44,9 @@ export class GameContainerComponent implements OnInit {
 
   ngOnInit() {}
 
-  setPlayerChoice(event){
-    this.playerChoice = event.target.value
-  }
+  // setPlayerChoice(event){
+  //   this.playerChoice = event.target.value
+  // }
 
   // selectedChoice = 0
   // computersChoice = 2

@@ -8,9 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChoiceComponent implements OnInit {
   @Input() classText: string;
 
+  playerChoice = []
+
   constructor() { }
 
   ngOnInit() {
   }  
+
+  setPlayerChoice(event) {
+    this.playerChoice = event.target.value
+    //not getting target.value...
+  }
 
 }

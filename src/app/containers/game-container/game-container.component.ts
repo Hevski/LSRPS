@@ -38,14 +38,15 @@ export class GameContainerComponent implements OnInit {
   computerScore: 0;
   playing: false;
 
-
   title: TitleComponent;
 
   constructor() {}
 
   ngOnInit() {}
 
-  
+  setPlayerChoice(event){
+    this.playerChoice = event.target.value
+  }
 
   // selectedChoice = 0
   // computersChoice = 2

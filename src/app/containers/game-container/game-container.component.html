@@ -2,11 +2,11 @@
   <app-title></app-title>
   <app-display></app-display>
     <div class="d-inline-flex p-2 bd-highlight flex-wrap">
-      <app-choice classText="far fa-hand-rock fa-4x"></app-choice>
-      <app-choice classText="far fa-hand-paper fa-4x"></app-choice>
-      <app-choice classText="far fa-hand-scissors fa-4x"></app-choice>
-      <app-choice classText="far fa-hand-lizard fa-4x"></app-choice>
-      <app-choice classText="far fa-hand-spock fa-4x"></app-choice>
+      <app-choice (click)="setPlayerChoice('rock')" classText="far fa-hand-rock fa-4x"></app-choice>
+      <app-choice (click)="setPlayerChoice('paper')" classText="far fa-hand-paper fa-4x"></app-choice>
+      <app-choice (click)="setPlayerChoice('scissors')" classText="far fa-hand-scissors fa-4x"></app-choice>
+      <app-choice (click)="setPlayerChoice('lizard')" classText="far fa-hand-lizard fa-4x"></app-choice>
+      <app-choice (click)="setPlayerChoice('spock')" classText="far fa-hand-spock fa-4x"></app-choice>
     </div>
   <app-button buttonText="Play"></app-button>
   <app-button buttonText="Reset Game"></app-button>

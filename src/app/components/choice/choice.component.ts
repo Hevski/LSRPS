@@ -7,17 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChoiceComponent implements OnInit {
   @Input() classText: string;
+  @Input() choiceCallback: Function;
 
   playerChoice = []
 
   constructor() { }
 
   ngOnInit() {
+    console.log(typeof this.choiceCallback);
+    
   }  
-
-  setPlayerChoice(event) {
-    this.playerChoice = event.target.value
-    //not getting target.value...
-  }
-
 }

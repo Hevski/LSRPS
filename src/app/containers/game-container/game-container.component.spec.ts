@@ -36,6 +36,10 @@ describe('GameContainerComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should start with empty players choice', () => {  
+    expect(component.playerChoice.length).toEqual(0);
+  })
+
   it('should store a players choice', () => {
     component.setPlayerChoice('rock')
     expect(component.playerChoice.length).toEqual(1);

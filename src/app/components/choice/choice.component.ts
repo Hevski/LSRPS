@@ -14,7 +14,6 @@ export class ChoiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(typeof this.choiceCallback);
     
   }  
 }

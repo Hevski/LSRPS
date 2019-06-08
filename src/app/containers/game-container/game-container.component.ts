@@ -31,7 +31,7 @@ export class GameContainerComponent implements OnInit {
     }
   ];
 
-  playerChoice: [];
+  playerChoice: any[];
   compupterChoice: null;
   winner: null;
   playerScore: 0;
@@ -44,10 +44,10 @@ export class GameContainerComponent implements OnInit {
 
   ngOnInit() {}
 
-  setPlayerChoice(playerChoice){
-    this.playerChoice = playerChoice;
-    console.log(this.playerChoice);
-    
+  setPlayerChoice(selection){
+    let selectionArray = Array();
+    selectionArray.push(selection)
+    this.playerChoice = selectionArray
   }
 
   // selectedChoice = 0

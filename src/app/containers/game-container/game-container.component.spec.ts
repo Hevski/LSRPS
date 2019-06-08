@@ -17,7 +17,7 @@ describe('GameContainerComponent', () => {
                       DisplayComponent,
                       ChoiceComponent,
                       ButtonComponent
-                     ]
+                    ]
     })
     .compileComponents();
   }));
@@ -28,7 +28,22 @@ describe('GameContainerComponent', () => {
     fixture.detectChanges();
   });
 
+  afterAll(() => {
+    component.playerChoice = []
+  })
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should store a players choice', () => {
+    component.setPlayerChoice('rock')
+    expect(component.playerChoice.length).toEqual(1);
+  })
+
+  it('should only store one player choice', () => {
+    component.setPlayerChoice('rock')
+    component.setPlayerChoice('sissors')
+    expect(component.playerChoice.length).toEqual(1);
+  })
 });

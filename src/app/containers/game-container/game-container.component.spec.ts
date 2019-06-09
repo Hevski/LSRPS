@@ -50,4 +50,13 @@ describe('GameContainerComponent', () => {
     component.setPlayerChoice('sissors')
     expect(component.playerChoice.length).toEqual(1);
   })
+
+  it('should not generate number outside range', () => {
+    const numberArray = [];
+    for (let i = 1; i < 100; i++) numberArray.push(component.setComputersChoice());
+    const expected = numberArray.filter(element => element > 4);
+    expect(expected.length).toEqual(0)
+  })
+
+
 });

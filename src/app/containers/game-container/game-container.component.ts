@@ -48,7 +48,10 @@ export class GameContainerComponent implements OnInit {
   setPlayerChoice(selection){
     this.playerChoice = []
     this.playerChoice.push(selection)
-    console.log(this.playerChoice);
+  }
+
+  setComputersChoice(){
+    return Math.floor(Math.random() * 5);
   }
 
   // selectedChoice = 0

@@ -46,9 +46,9 @@ export class GameContainerComponent implements OnInit {
   }
 
   setPlayerChoice(selection){
-    let selectionArray = Array();
-    selectionArray.push(selection)
-    this.playerChoice = selectionArray
+    this.playerChoice = []
+    this.playerChoice.push(selection)
+    console.log(this.playerChoice);
   }
 
   // selectedChoice = 0

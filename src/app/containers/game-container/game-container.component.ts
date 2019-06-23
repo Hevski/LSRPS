@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
 
 @Component({
@@ -8,7 +8,8 @@ import { TitleComponent } from '../../components/title/title.component';
 })
 export class GameContainerComponent implements OnInit {
 
-  hands: [
+  @Input() 
+  hands = [
     {
       name: 'rock',
       message: { 'lizard': 'Rock crushes Lizard', 'scissors': 'Rock crushes Scissors' }
@@ -31,28 +32,41 @@ export class GameContainerComponent implements OnInit {
     }
   ];
 
+//   var choices = {
+//   rock: { name: "Rock", defeats: ["scissors", "lizard"] },
+//   paper: { name: "Paper", defeats: ["rock", "spock"] },
+//   scissors: { name: "Scissors", defeats: ["paper", "lizard"] },
+//   lizard: { name: "Lizard", defeats: ["paper", "spock"] },
+//   spock: { name: "Spock", defeats: ["scissors", "rock"] }
+// };
+
   playerChoice: Array<any> = [];
-  compupterChoice: null;
+  computerChoice: String;
   winner: null;
   playerScore: 0;
   computerScore: 0;
   playing: false;
-
+  
   title: TitleComponent;
-
+  
   constructor() {}
-
+  
   ngOnInit() {
   }
-
+  
   setPlayerChoice(selection){
     this.playerChoice = []
     this.playerChoice.push(selection)
+    // this.setComputersChoice()
+  }
+  
+  setComputersChoice(){
+    this.computerChoice = this.hands[Math.floor(Math.random() * 5)].name
   }
 
-  setComputersChoice(){
-    return Math.floor(Math.random() * 5);
-  }
+  //determineWinner(playerChoice, computerChoice) {
+
+  //}
 
   // selectedChoice = 0
   // computersChoice = 2

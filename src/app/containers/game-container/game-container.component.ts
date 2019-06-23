@@ -49,12 +49,13 @@ export class GameContainerComponent implements OnInit {
   setPlayerChoice(selection){
     this.playerChoice = []
     this.playerChoice.push(selection)
-    // this.setComputersChoice()
+    this.setComputersChoice()
   }
   
   setComputersChoice(){
     this.computerChoice = this.hands[Math.floor(Math.random() * 5)].name
   }
+
 
   //determineWinner(playerChoice, computerChoice) {
 

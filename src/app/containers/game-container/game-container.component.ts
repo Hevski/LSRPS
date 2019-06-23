@@ -32,7 +32,7 @@ export class GameContainerComponent implements OnInit {
     }
   ];
 
-  playerChoice: Array<any> = [];
+  playerChoice: String;
   computerChoice: String;
   winner: null;
   playerScore: 0;
@@ -47,8 +47,8 @@ export class GameContainerComponent implements OnInit {
   }
   
   setPlayerChoice(selection){
-    this.playerChoice = []
-    this.playerChoice.push(selection)
+    this.playerChoice = selection
+    console.log(this.playerChoice);
     this.setComputersChoice()
   }
   
@@ -56,10 +56,9 @@ export class GameContainerComponent implements OnInit {
     this.computerChoice = this.hands[Math.floor(Math.random() * 5)].name
   }
 
-
-  //determineWinner(playerChoice, computerChoice) {
-
-  //}
+  determineWinner(playerChoice, computerChoice) {
+    
+  }
 
   // selectedChoice = 0
   // computersChoice = 2

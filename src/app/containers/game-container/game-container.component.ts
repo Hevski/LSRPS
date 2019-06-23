@@ -32,9 +32,10 @@ export class GameContainerComponent implements OnInit {
     }
   ];
 
-  playerChoice: String;
-  computerChoice: String;
-  winner: null;
+  playerChoice: Array<any> = [];
+  computerChoice: Array<any> = [];
+  winner: String;
+  winMessage: null;
   playerScore: 0;
   computerScore: 0;
   playing: false;
@@ -47,18 +48,21 @@ export class GameContainerComponent implements OnInit {
   }
   
   setPlayerChoice(selection){
-    this.playerChoice = selection
-    console.log(this.playerChoice);
+    this.playerChoice = []
+    this.playerChoice.push(selection)
     this.setComputersChoice()
+    // this.determineWinner(this.playerChoice, this.computerChoice)
   }
   
   setComputersChoice(){
-    this.computerChoice = this.hands[Math.floor(Math.random() * 5)].name
+    this.computerChoice = []
+    this.computerChoice.push(this.hands[Math.floor(Math.random() * 5)])
   }
 
   determineWinner(playerChoice, computerChoice) {
-    
-  }
+    return "hellop"
+    }
+  
 
   // selectedChoice = 0
   // computersChoice = 2

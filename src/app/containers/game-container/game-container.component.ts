@@ -57,9 +57,11 @@ export class GameContainerComponent implements OnInit {
   setComputersChoice(){
     this.computerChoice = []
     this.computerChoice.push(this.hands[Math.floor(Math.random() * 5)])
+    console.log(this.computerChoice);
+    
   }
 
-  determineWinner(playerChoice, computerChoice) {
+  determineWinner() {
     return "hellop"
     }
   

@@ -58,5 +58,15 @@ describe('GameContainerComponent', () => {
     expect(expected.length).toEqual(0)
   })
 
+  it('should start with empty computers choice', () => {
+    expect(component.computerChoice.length).toEqual(0);
+  })
+
+  it('should only store one computer choice', () => {
+    component.setComputersChoice()
+    component.setComputersChoice()
+    expect(component.computerChoice.length).toEqual(1);
+  })
+
 
 });

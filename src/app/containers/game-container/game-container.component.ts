@@ -8,7 +8,6 @@ import { TitleComponent } from '../../components/title/title.component';
 })
 export class GameContainerComponent implements OnInit {
 
-  @Input() 
   hands = [
     {
       name: 'rock',

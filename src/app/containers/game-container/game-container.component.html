@@ -8,7 +8,7 @@
       <app-choice class="p-1" (click)="playGame('lizard')" classText="far fa-hand-lizard fa-4x"></app-choice>
       <app-choice class="p-1" (click)="playGame('spock')" classText="far fa-hand-spock fa-4x"></app-choice>
     </div>
-  <app-score></app-score>
+  <app-score playerScore={{playerScore}} computerScore={{computerScore}}></app-score>
   <app-button buttonText="Play"></app-button>
   <app-button (click)="resetGame()" buttonText="Reset Game"></app-button>
 </div>

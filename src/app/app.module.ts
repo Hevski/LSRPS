@@ -9,6 +9,7 @@ import { TitleComponent } from './components/title/title.component';
 import { DisplayComponent } from './components/display/display.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ChoiceComponent } from './components/choice/choice.component';
+import { ScoreComponent } from './components/score/score.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ChoiceComponent } from './components/choice/choice.component';
     DisplayComponent,
     ButtonComponent,
     ChoiceComponent,
+    ScoreComponent,
   ],
   imports: [
     BrowserModule

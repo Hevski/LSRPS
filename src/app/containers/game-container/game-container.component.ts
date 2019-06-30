@@ -80,6 +80,12 @@ export class GameContainerComponent implements OnInit {
     }
   }
 
+  resetGame() {
+    this.playerScore = 0
+    this.computerScore = 0
+    this.winMessage = null
+  }
+
   checkWinner(): string {
     return this.playerScore > this.computerScore ? this.winMessage = "GAME OVER PLAYER WINS!" : this.winMessage = "GAME OVER COMPUTER WINS!"
   }

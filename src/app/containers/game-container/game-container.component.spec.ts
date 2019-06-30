@@ -80,6 +80,15 @@ describe('GameContainerComponent', () => {
     expect(component.computerScore).toEqual(1)
   })
 
-
+  it('should return true if a score reaches five', () => {
+    component.increasePlayerScore()
+    component.increasePlayerScore()
+    component.increasePlayerScore()
+    component.increasePlayerScore()
+    component.increasePlayerScore()
+    let expected = component.checkScore()
+    expect(component.playerScore).toEqual(5)
+    expect(expected).toBe(true)
+  })
 
 });

@@ -68,11 +68,10 @@ export class GameContainerComponent implements OnInit {
     this.computerScore += 1
   }
 
-
-
-  // determineWinner() {
-  //   return "hellop"
-  //   }
+  checkScore(): boolean {
+    return this.playerScore === 5 || this.computerScore === 5 ? true : false;
+    };
+  
   
 
   // selectedChoice = 0

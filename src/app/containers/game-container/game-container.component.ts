@@ -34,6 +34,7 @@ export class GameContainerComponent implements OnInit {
   playerChoice: Array<any> = [];
   computerChoice: Array<any> = [];
   winMessage: string = "";
+  overallWinMessage: string = "";
   playerScore: number = 0;
   computerScore: number = 0;
   playing: true;
@@ -82,11 +83,11 @@ export class GameContainerComponent implements OnInit {
   resetGame() {
     this.playerScore = 0
     this.computerScore = 0
-    this.winMessage = null
+    this.overallWinMessage = null
   }
 
   checkWinner(): string {
-    return this.playerScore > this.computerScore ? this.winMessage = "GAME OVER PLAYER WINS!" : this.winMessage = "GAME OVER COMPUTER WINS!"
+    return this.playerScore > this.computerScore ? this.overallWinMessage = "GAME OVER PLAYER WINS!" : this.overallWinMessage = "GAME OVER COMPUTER WINS!"
   }
 
   playRound(){

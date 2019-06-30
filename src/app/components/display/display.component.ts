@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
-  @Input() displayText: string;
+  @Input() winMessage: string;
+  @Input() overallWinMessage: string;
 
   constructor() { }
 

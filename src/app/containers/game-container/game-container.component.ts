@@ -34,7 +34,6 @@ export class GameContainerComponent implements OnInit {
 
   playerChoice: Array<any> = [];
   computerChoice: Array<any> = [];
-  winner: String;
   winMessage: string = "";
   playerScore: number = 0;
   computerScore: number = 0;
@@ -76,23 +75,30 @@ export class GameContainerComponent implements OnInit {
     let scoreCapReached = this.checkScoreCapReached()
     if (scoreCapReached === true) {
       this.checkWinner()
+      this.playerScore = 0
+      this.computerScore = 0
     }
   }
 
   checkWinner(): string {
-    return this.playerScore > this.computerScore ? "Player wins" : "Computer wins"
+    return this.playerScore > this.computerScore ? this.winMessage = "GAME OVER PLAYER WINS!" : this.winMessage = "GAME OVER COMPUTER WINS!"
   }
 
   playRound(){
     let playerChoice = this.playerChoice[0]["name"]
     let computerChoice = this.computerChoice[0]["name"]
     let computerMessageObject = this.computerChoice[0]["message"]
-    if (Object.keys(computerMessageObject).includes(playerChoice)) {
+
+    if (playerChoice === computerChoice) {
+      this.winMessage = 'Its a draw!'
+      return
+    }
+    if(Object.keys(computerMessageObject).includes(playerChoice)) {
       this.increaseComputerScore()
-      return this.computerChoice[0]["message"][playerChoice]
+      this.winMessage = 'Computer wins, ' + this.computerChoice[0]["message"][playerChoice]
     } else {
       this.increasePlayerScore()
-      return this.playerChoice[0]['message'][computerChoice]
+      this.winMessage = 'Player wins, ' + this.playerChoice[0]['message'][computerChoice]
     }
   }
   

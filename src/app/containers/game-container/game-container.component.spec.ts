@@ -105,7 +105,8 @@ describe('GameContainerComponent', () => {
   it('when player picks rock and computer picks lizard, player wins', () => {
     component.computerChoice = [{ name: 'lizard', message: { paper: 'Lizard eats Paper', spock: 'Lizard poisons Spock' }}]
     component.setPlayerChoice("rock")
-    expect(component.playRound()).toEqual('Rock crushes Lizard')
+    component.playRound()
+    expect(component.winMessage).toEqual('Player wins, Rock crushes Lizard')
     expect(component.playerScore).toEqual(1)
     expect(component.computerScore).toEqual(0)
   })
@@ -113,7 +114,8 @@ describe('GameContainerComponent', () => {
   it('when computer picks rock and player picks lizard, computer wins', () => {
     component.computerChoice = [{ name: 'rock', message: { lizard: 'Rock crushes Lizard', scissors: 'Rock crushes Scissors' }}]
     component.setPlayerChoice("lizard")
-    expect(component.playRound()).toEqual('Rock crushes Lizard')
+    component.playRound()
+    expect(component.winMessage).toEqual('Computer wins, Rock crushes Lizard')
     expect(component.playerScore).toEqual(0)
     expect(component.computerScore).toEqual(1)
   })

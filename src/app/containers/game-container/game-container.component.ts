@@ -49,7 +49,10 @@ export class GameContainerComponent implements OnInit {
   
   setPlayerChoice(selection){
     this.playerChoice = []
-    this.playerChoice.push(selection)
+    let matchedChoice = this.hands.find(function (element) {
+        return element['name'] === selection;
+      });
+    this.playerChoice.push(matchedChoice)   
   }
   
   setComputersChoice(){
@@ -81,14 +84,15 @@ export class GameContainerComponent implements OnInit {
   }
 
   playRound(){
-    let playerChoice = this.playerChoice[0]
+    let playerChoice = this.playerChoice[0]["name"]
+    let computerChoice = this.computerChoice[0]["name"]
     let computerMessageObject = this.computerChoice[0]["message"]
     if (Object.keys(computerMessageObject).includes(playerChoice)) {
       this.increaseComputerScore()
       return this.computerChoice[0]["message"][playerChoice]
     } else {
       this.increasePlayerScore()
-      return 'Player wins'
+      return this.playerChoice[0]['message'][computerChoice]
     }
   }
   

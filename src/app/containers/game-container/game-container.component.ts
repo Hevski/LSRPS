@@ -36,8 +36,8 @@ export class GameContainerComponent implements OnInit {
   computerChoice: Array<any> = [];
   winner: String;
   winMessage: null;
-  playerScore: 0;
-  computerScore: 0;
+  playerScore: number = 0;
+  computerScore: number = 0;
   playing: false;
   
   title: TitleComponent;
@@ -58,12 +58,21 @@ export class GameContainerComponent implements OnInit {
     this.computerChoice = []
     this.computerChoice.push(this.hands[Math.floor(Math.random() * 5)])
     console.log(this.computerChoice);
-    
   }
 
-  determineWinner() {
-    return "hellop"
-    }
+  increasePlayerScore() {
+    this.playerScore += 1
+  }
+
+  increaseComputerScore() {
+    this.computerScore += 1
+  }
+
+
+
+  // determineWinner() {
+  //   return "hellop"
+  //   }
   
 
   // selectedChoice = 0

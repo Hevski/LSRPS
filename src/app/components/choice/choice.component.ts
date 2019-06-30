@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChoiceComponent implements OnInit {
   @Input() classText: string;
-  @Input() choiceCallback: Function;
 
   playerChoice = []
 

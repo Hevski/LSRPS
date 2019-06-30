@@ -68,5 +68,18 @@ describe('GameContainerComponent', () => {
     expect(component.computerChoice.length).toEqual(1);
   })
 
+  it('should increase player score by one', () => {
+    expect(component.playerScore).toEqual(0)
+    component.increasePlayerScore()
+    expect(component.playerScore).toEqual(1)
+  })
+
+  it('should increase computer score by one', () => {
+    expect(component.computerScore).toEqual(0)
+    component.increaseComputerScore()
+    expect(component.computerScore).toEqual(1)
+  })
+
+
 
 });

@@ -35,10 +35,10 @@ export class GameContainerComponent implements OnInit {
   playerChoice: Array<any> = [];
   computerChoice: Array<any> = [];
   winner: String;
-  winMessage: null;
+  winMessage: string = "";
   playerScore: number = 0;
   computerScore: number = 0;
-  playing: false;
+  playing: true;
   
   title: TitleComponent;
   
@@ -50,14 +50,13 @@ export class GameContainerComponent implements OnInit {
   setPlayerChoice(selection){
     this.playerChoice = []
     this.playerChoice.push(selection)
-    this.setComputersChoice()
-    // this.determineWinner(this.playerChoice, this.computerChoice)
   }
   
   setComputersChoice(){
     this.computerChoice = []
     this.computerChoice.push(this.hands[Math.floor(Math.random() * 5)])
-    console.log(this.computerChoice);
+    console.log(this.computerChoice[0]);
+    
   }
 
   increasePlayerScore() {
@@ -68,23 +67,32 @@ export class GameContainerComponent implements OnInit {
     this.computerScore += 1
   }
 
-  declareWinner(): string {
-    return this.playerScore === 5 ? 'Player is winner' : 'Computer is winner'
-  };
+  checkScoreCapReached(): boolean {
+    return this.playerScore === 5 || this.computerScore === 5 ? true : false;
+  }
 
+  declareWinner() {
+    let scoreCapReached = this.checkScoreCapReached()
+    if (scoreCapReached === true) {
+      this.checkWinner()
+    }
+  }
+
+  checkWinner(): string {
+    return this.playerScore > this.computerScore ? "Player wins" : "Computer wins"
+  }
+
+  playRound(){
+    let playerChoice = this.playerChoice[0]
+    let computerMessageObject = this.computerChoice[0]["message"]
+
+    return Object.keys(computerMessageObject).includes(playerChoice) ? 'Computer wins' : 'Player wins' 
+  }
   
-
-  // selectedChoice = 0
-  // computersChoice = 2
-  // winner = 0
-
-  // function determineWinner () => {
-      // if blah > blah
-      // set winner to 1
-  // }
-
-  // declairWinner
-  // 
-  //
-
+  playGame(selection) {
+    this.setPlayerChoice(selection)
+    this.setComputersChoice()
+    this.playRound()
+    this.declareWinner()
+  }
 }

@@ -86,9 +86,9 @@ describe('GameContainerComponent', () => {
     component.increasePlayerScore()
     component.increasePlayerScore()
     component.increasePlayerScore()
-    let expected = component.declareWinner()
+    let expected = component.checkScoreCapReached()
     expect(component.playerScore).toEqual(5)
-    expect(expected).toEqual('Player is winner')
+    expect(expected).toBe(true)
   })
 
   it('should return true if a computer score reaches five', () => {
@@ -97,9 +97,21 @@ describe('GameContainerComponent', () => {
     component.increaseComputerScore()
     component.increaseComputerScore()
     component.increaseComputerScore()
-    let expected = component.declareWinner()
+    let expected = component.checkScoreCapReached()
     expect(component.computerScore).toEqual(5)
-    expect(expected).toEqual('Computer is winner')
+    expect(expected).toBe(true)
+  })
+
+  it('when player picks rock and computer picks lizard, player wins', () => {
+    component.computerChoice = [{ name: 'lizard', message: { paper: 'Lizard eats Paper', spock: 'Lizard poisons Spock' }}]
+    component.setPlayerChoice("rock")
+    expect(component.playRound()).toEqual('Player wins')
+  })
+
+  it('when computer picks rock and player picks lizard, player wins', () => {
+    component.computerChoice = [{ name: 'rock', message: { lizard: 'Rock crushes Lizard', scissors: 'Rock crushes Scissors' }}]
+    component.setPlayerChoice("lizard")
+    expect(component.playRound()).toEqual('Computer wins')
   })
 
 });

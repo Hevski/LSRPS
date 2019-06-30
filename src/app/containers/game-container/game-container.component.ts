@@ -83,6 +83,7 @@ export class GameContainerComponent implements OnInit {
   resetGame() {
     this.playerScore = 0
     this.computerScore = 0
+    this.winMessage = null
     this.overallWinMessage = null
   }
 

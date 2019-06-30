@@ -55,8 +55,6 @@ export class GameContainerComponent implements OnInit {
   setComputersChoice(){
     this.computerChoice = []
     this.computerChoice.push(this.hands[Math.floor(Math.random() * 5)])
-    console.log(this.computerChoice[0]);
-    
   }
 
   increasePlayerScore() {
@@ -85,8 +83,13 @@ export class GameContainerComponent implements OnInit {
   playRound(){
     let playerChoice = this.playerChoice[0]
     let computerMessageObject = this.computerChoice[0]["message"]
-
-    return Object.keys(computerMessageObject).includes(playerChoice) ? 'Computer wins' : 'Player wins' 
+    if (Object.keys(computerMessageObject).includes(playerChoice)) {
+      this.increaseComputerScore()
+      return this.computerChoice[0]["message"][playerChoice]
+    } else {
+      this.increasePlayerScore()
+      return 'Player wins'
+    }
   }
   
   playGame(selection) {

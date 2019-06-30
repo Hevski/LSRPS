@@ -111,7 +111,7 @@ describe('GameContainerComponent', () => {
   it('when computer picks rock and player picks lizard, player wins', () => {
     component.computerChoice = [{ name: 'rock', message: { lizard: 'Rock crushes Lizard', scissors: 'Rock crushes Scissors' }}]
     component.setPlayerChoice("lizard")
-    expect(component.playRound()).toEqual('Computer wins')
+    expect(component.playRound()).toEqual('Rock crushes Lizard')
   })
 
 });

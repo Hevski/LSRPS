@@ -75,8 +75,6 @@ export class GameContainerComponent implements OnInit {
     let scoreCapReached = this.checkScoreCapReached()
     if (scoreCapReached === true) {
       this.checkWinner()
-      this.playerScore = 0
-      this.computerScore = 0
     }
   }
 

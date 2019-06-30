@@ -1,7 +1,7 @@
 <div>
   <app-title></app-title>
   <app-display winMessage={{winMessage}} overallWinMessage={{overallWinMessage}}></app-display>
-    <div class="d-inline-flex p-2 bd-highlight flex-wrap">
+    <div *ngIf="checkScoreCapReached() === false" class="d-inline-flex p-2 bd-highlight flex-wrap" disabled>
       <app-choice 
         class="p-1" 
         (click)="playGame('rock')" 

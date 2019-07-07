@@ -7,7 +7,7 @@ import { TitleComponent } from '../../components/title/title.component';
   styleUrls: ['./game-container.component.scss']
 })
 export class GameContainerComponent implements OnInit {
-  instructions = "Choose your weapon!"
+  instructions = "Choose your weapon! First to 5 wins"
 
   hands = [
     {

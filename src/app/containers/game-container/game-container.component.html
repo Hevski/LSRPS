@@ -1,4 +1,4 @@
-<div>
+<div class="body">
   <app-title></app-title>
   <h2 *ngIf="!winMessage">{{instructions}}</h2>
   <app-display winMessage={{winMessage}} overallWinMessage={{overallWinMessage}}></app-display>
@@ -8,6 +8,7 @@
         (click)="playGame('rock')" 
         classText="far fa-hand-rock fa-4x"
         title="Rock">
+        <!-- <img src="assets/rock.jpg" alt="rock"> -->
       </app-choice>
       <app-choice 
         class="p-1" 

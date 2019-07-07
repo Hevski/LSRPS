@@ -1,5 +1,6 @@
 <div>
   <app-title></app-title>
+  <h2 *ngIf="!winMessage">{{instructions}}</h2>
   <app-display winMessage={{winMessage}} overallWinMessage={{overallWinMessage}}></app-display>
     <div *ngIf="checkScoreCapReached() === false" class="d-inline-flex p-2 bd-highlight flex-wrap" disabled>
       <app-choice 
